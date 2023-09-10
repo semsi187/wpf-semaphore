@@ -1,0 +1,29 @@
+﻿<Window x:Class="wpf_semaphore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_semaphore"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+
+        <ListBox x:Name="WorkingListBox" Margin="551,76,34,124" ItemsSource="{Binding WorkingThreads}"/>
+
+        <ListBox x:Name="WaitingListBox" Margin="292,74,292,128" ItemsSource="{Binding WaitingThreads}" MouseDoubleClick="WaitingListBox_MouseDoubleClick"/>
+
+        <ListBox x:Name="CreatedThreadsListBox" Margin="20,74,565,123" ItemsSource="{Binding CreatedThreads}" MouseDoubleClick="CreatedThreadsListBox_MouseDoubleClick"/>
+
+        <Label Margin="20,30,724,375">Working</Label>
+        <Label Margin="292,30,452,375">Waiting</Label>
+        <Label Margin="551,30,193,375">Created</Label>
+        
+        <Label Margin="20,326,659,79">Places in semaphore</Label>
+
+        <Button Content="create" Height="40" Width="120" HorizontalAlignment="Right" Margin="0,355,82,39" Click="Button_Click" FontWeight="Bold" Background="White"/>
+
+        <ui:Button Grid.Row="3" Height="40" Width="120" HorizontalAlignment="Right" Margin="15" Content="Create New" Click="Button_Click"/>
+
+    </Grid>
+</Window>
